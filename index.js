@@ -1,5 +1,12 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i = 0; i < array.length -1; i++) {
+      for (let j = i+1; j < array.length; j++){
+        if(array[i] + array[j] === target) {
+          return true
+        }
+      }
+  }
+  return false
 }
 
 /* 
@@ -7,8 +14,10 @@ function hasTargetSum(array, target) {
 */
 
 /* 
-  Add your pseudocode here
-*/
+  взять певые эелент,
+  слодить его с каждым следкющим в строке
+  если сумма човпала выйти с тру
+  если нет вконце вернуть фалс
 
 /*
   Add written explanation of your solution here
@@ -16,7 +25,17 @@ function hasTargetSum(array, target) {
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
-  // add your own custom tests in here
+  console.log("Expecting: false");
+  console.log("=>", hasTargetSum([20, 4, 25], 25));
+
+  console.log("");
+  
+  console.log("Expecting: false ");
+  console.log("=>", hasTargetSum([25, 19, 0, 6, 30], 2));
+
+  console.log("");
+
+
   console.log("Expecting: true");
   console.log("=>", hasTargetSum([3, 8, 12, 4, 11, 7], 10));
 
